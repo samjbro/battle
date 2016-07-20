@@ -1,13 +1,23 @@
-<h1>Battle!</h1>
-<h2>Sign in to play</h2>
-<form action = "/names" method = "post">
-	<label for="player_1_name">
-		Player 1 name
-		<input type = "text" name = "player_1_name">
-	</label>
-	<label for="player_2_name">
-		Player 2 name
-		<input type = "text" name = "player_2_name">
-	</label>
-	<input type = "submit" value = "Submit">
-</form>
+<!DOCTYPE html>
+<html>
+<header>
+	<title>Battle: Enter Names</title>
+</header>
+<body>
+		<h1>Battle: Enter Names</h1>
+		<h2>Sign in to play</h2>
+		<form action = "/names" method = "post">
+			<label for="player_1_name">
+				<b>Player 1 name:</b>
+				<input type = "text" name = "player_1_name">
+			</label>
+			<br />
+			<br />
+			<label for="player_2_name">
+				<b>Player 2 name:</b>
+				<input type = "text" name = "player_2_name">
+			</label>
+			<input type = "submit" value = "Submit">
+		</form>
+	</body>
+</html>
