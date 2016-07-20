@@ -13,8 +13,8 @@ describe Player do
     expect{ player_1.reduce_hp }.to change{ player_1.hp }.by(-default_hit)
   end
 
-  it "attacks player" do
-    expect(player_2).to receive(:reduce_hp)
-    player_1.attack(player_2)
-  end
+  # it "attacks player" do
+  #   expect(player_2).to receive(:reduce_hp)
+  #   player_1.attack(player_2)
+  # end
 end

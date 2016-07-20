@@ -12,8 +12,8 @@ class Player
   	@hp -= DEFAULT_HIT
   end
 
-  def attack(player)
-    player.reduce_hp
-  end
+  # def attack(player)
+  #   player.reduce_hp
+  # end
 
 end
