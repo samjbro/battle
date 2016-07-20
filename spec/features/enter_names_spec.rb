@@ -12,6 +12,11 @@ feature "Hit points" do
 		sign_in_and_play
 		expect(page).to have_content 'Sal: 100 hp'
 	end
+
+  scenario "seeing my own hit points" do
+    sign_in_and_play
+    expect(page).to have_content 'Sam: 100 hp'
+  end
 end
 
 feature "Attacking" do
@@ -24,11 +29,27 @@ feature "Attacking" do
 		click_button('Attack')
 		expect(page).to have_content 'Sam attacked Sal'
 	end
+
+  scenario "attacking player 1" do
+    sign_in_and_play
+    attack_once
+    click_button('Attack')
+    expect(page).to have_content 'Sal attacked Sam'
+  end
+
 	scenario "reduces player 2's hp by 10" do
 		sign_in_and_play
 		attack_once
 		expect(page).to have_content "Sal: 90 hp"
 	end
+
+  scenario "reduces player 1's hp by 10" do
+		sign_in_and_play
+		attack_once
+    attack_once
+		expect(page).to have_content "Sam: 90 hp"
+	end
+
 	scenario "switches turn after attack" do
 		sign_in_and_play
 		attack_once
