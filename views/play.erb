@@ -2,9 +2,13 @@
 
 <br><%= @game.player1.name %>: <%= @game.player1.hp %> hp
 <br><%= @game.player2.name %>: <%= @game.player2.hp %> hp
-
-<br><%= @game.attacker.name%>'s turn
+<br>
+<% if @game.attacker.hp > 0 %>
+<%= @game.attacker.name%>'s turn
 
 <form action="/attack" method="get">
 	<input type="submit" value="Attack">
 </form>
+<% else %>
+	<%= @game.attacker.name.upcase %> LOST!
+<% end %>

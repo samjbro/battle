@@ -61,4 +61,10 @@ feature "Attacking" do
 		attack_once
 		expect(page).to have_content "Sam: 90 hp"
 	end
+
+  scenario "player lose when reaches 0 HP" do
+    sign_in_and_play
+    attack_19_times
+    expect(page).to have_content "SAL LOST!"
+  end
 end

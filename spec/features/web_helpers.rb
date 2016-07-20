@@ -10,3 +10,7 @@ def attack_once
 	click_button('Attack')
 	click_link('OK')
 end
+
+def attack_19_times
+  19.times { attack_once }
+end
