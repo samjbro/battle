@@ -14,9 +14,11 @@ feature 'Attacking' do
     expect(page).to have_content 'You hit player 2!'
   end
 
-  scenario 'hit point count goes down' do
+  scenario '#hit_points: hit point count goes down' do
     sign_in_and_play
     click_button 'Attack player 2'
     expect(page).to have_content 'player 2 has 90 hit points'
   end
+
+
 end
