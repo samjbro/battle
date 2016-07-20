@@ -1,4 +1,4 @@
-require 'spec_helper'
+
 
 # As Player 1,
 # So I can see how close I am to winning
