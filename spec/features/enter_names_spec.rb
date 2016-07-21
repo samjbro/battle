@@ -4,6 +4,6 @@ feature 'enter names' do
     fill_in "player_1", with: "Richard"
     fill_in "player_2", with: "Jonny"
     click_button "Confirm"
-    expect(page).to have_content "Richard & Jonny get ready for battle!"
+    expect(page).to have_content "Richard vs. Jonny!"
   end
 end
