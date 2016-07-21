@@ -13,6 +13,15 @@ describe Game do
     end
   end
 
+  context '#opponent_of' do
+  	it "should return the opponent of player 1" do
+  		expect(game.opponent_of(player_1)).to eq(player_2)
+  	end
+  	it "should return the opponent of player 2" do
+  		expect(game.opponent_of(player_2)).to eq(player_1)
+  	end
+  end
+
   context 'When in the game' do
     it 'Player_1 equals player 1' do
       expect(game.player_1).to eq player_1

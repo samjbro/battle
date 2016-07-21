@@ -13,6 +13,14 @@ class Game
     @players.last
   end
 
+  def player_turn
+    @player_turn
+  end
+
+  def opponent_of attacker
+  	@players.find {|player| player != attacker }
+  end
+
   def switcher
     if @player_turn == player_1
       @player_turn = player_2
@@ -21,9 +29,7 @@ class Game
     end
   end
 
-  def player_turn
-    @player_turn
-  end
+
 
   def attack(opponent)
     opponent.receive_damage
