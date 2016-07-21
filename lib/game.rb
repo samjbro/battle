@@ -38,7 +38,8 @@ class Game
   end
 
   def attack(opponent)
-    opponent.receive_damage
+  	damage = Kernel.rand(0..100)
+    opponent.receive_damage(damage)
   end
 
   private
