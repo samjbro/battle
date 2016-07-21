@@ -23,4 +23,13 @@ describe Game do
     end
   end
 
+  it 'switches players turn' do
+    expect{ game.switcher }.to change{ game.player_turn }
+  end
+
+  it "switches to player 2 after player 1's turn" do
+    game.switcher
+    expect(game.player_turn).to eq player_2
+  end
+
 end

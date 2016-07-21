@@ -6,6 +6,9 @@
   <body>
     <h1>You hit <%=@game.player_2.name%>!</h1>
     <div>
+      It is <%= @game.player_turn.name %>'s turn
+    </div>
+    <div>
       <%=@game.player_2.name%> has <%=@game.player_2.hp%> hit points
     </div>
   </body>
