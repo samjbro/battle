@@ -5,3 +5,4 @@ def sign_in_and_play
   fill_in :player_2_name, with: 'player 2'
   click_button 'Play'
 end
+

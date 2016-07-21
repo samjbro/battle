@@ -14,5 +14,14 @@ feature 'hit points' do
     sign_in_and_play
     expect(page).to have_content 'player 2 has 100 hit points'
   end
+  scenario "displays losing message when player has 0 hit points" do
+  	sign_in_and_play
+  	18.times do 
+  		click_button 'Attack player 2'
+  		click_button 'OK'
+  	end
+  	click_button 'Attack player 2'
+  	expect(page).to have_content 'player 2 has lost the game!'
+  end
 
 end

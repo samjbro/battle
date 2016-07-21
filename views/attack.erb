@@ -13,8 +13,15 @@
       <br>
       <%=@game.defending_player.name%> has <%=@game.defending_player.hp%> hit points
     </div>
+
+<% if @game.player_turn.hp > 0 %>
+
     <form action="/play" method="get">
       <button type="submit">OK</button>
     </form>
   </body>
+<% else %>
+	<%= @game.player_turn.name %> has lost the game! 
+<% end %>
+
 </html>
