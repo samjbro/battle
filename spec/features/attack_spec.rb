@@ -20,6 +20,9 @@ feature 'Attacking' do
     expect(page).to have_content 'player 2 has 90 hit points'
   end
 
-  
-
+  scenario 'displays the attacked players name' do
+    sign_in_and_play
+    click_button 'Attack player 2'
+    expect(page).to have_content 'player 2 was hit!'
+  end
 end

@@ -10,7 +10,7 @@
     <div>
       <%= @game.player_turn.name%> has <%= @game.player_turn.hp %> hit points
       <br>
-      <%= @game.opponent_of(@game.player_turn).name%> has <%= @game.opponent_of(@game.player_turn).hp%> hit points
+      <%= @game.defending_player.name%> has <%= @game.defending_player.hp%> hit points
       <form action="/attack" method="get">
       <button type="submit">Attack <%= @game.player_2.name %></button>
       </form>

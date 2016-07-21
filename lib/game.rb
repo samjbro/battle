@@ -17,8 +17,8 @@ class Game
     @player_turn
   end
 
-  def opponent_of attacker
-  	@players.find {|player| player != attacker }
+  def defending_player
+    opponent_of(@player_turn)
   end
 
   def switcher
@@ -29,9 +29,14 @@ class Game
     end
   end
 
-
-
   def attack(opponent)
     opponent.receive_damage
   end
+
+  private
+
+  def opponent_of attacker
+    @players.find {|player| player != attacker }
+  end
+
 end
