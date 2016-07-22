@@ -7,5 +7,9 @@
 </p>
 <%= @game.player_turn.name %>'s turn!
 <form action="/attack">
+<% if @game.player_turn == @game.player_1 %>
   <input type="submit" value="Attack!"/>
+<% else %>
+  <input type="submit" value="Continue"/>	
+<% end %>
 </form>
