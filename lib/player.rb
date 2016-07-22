@@ -10,7 +10,13 @@ attr_reader :name, :hp
   end
 
   def receive_damage
-    @hp -= 10
+    @hp -= calculate_damage
   end
+
+private
+	def calculate_damage
+		Kernel.rand(1..50)
+	end
+
 
 end
