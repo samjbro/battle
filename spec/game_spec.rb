@@ -21,18 +21,27 @@ describe Game do
   describe '#attack' do
     before { expect(player_2).to receive(:receive_damage) }
     it 'damages the player' do
-      game.attack(player_2)
-    end
-    it "switches player turn after attack" do
-      game.attack(player_2)
-      expect(game.player_turn).to eq player_2
+      game.attack
     end
   end
+
   describe "#player_turn" do
     it "is initialized as player 1" do
       expect(game.player_turn).to eq player_1
     end
   end
 
+  describe "#opponent_of" do
+    it "returns player 2 when player 1 attacks" do
+      expect(game.opponent_of(player_1)).to eq player_2
+    end
+  end
+
+  describe "#switch_turn" do
+    it "switches turn to player 2" do
+      game.switch_turn
+      expect(game.player_turn).to eq player_2
+    end
+  end
 
 end

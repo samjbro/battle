@@ -15,16 +15,18 @@ class Game
     @players.last
   end
 
-  def attack(player)
-    player.receive_damage
-    switch_turn
+  def attack
+    opponent_of(player_turn).receive_damage
   end
 
   def player_turn
     @player_turn
   end
 
-private
+  def opponent_of(attacker)
+    @players.find { |opponent| opponent != attacker }
+  end
+
   def switch_turn
     if @player_turn == player_1
       @player_turn = player_2
